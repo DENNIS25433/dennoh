@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karis Coffee Pub - Artisanal Coffee & Cozy Atmosphere</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #d5df18;
+
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+            background-size: cover;
+            background-position: center;
+            color: rgb(207, 153, 46)
+        }
+        
+        .menu-item:hover .menu-overlay {
+            opacity: 1;
+        }
+        
+        .menu-overlay {
+            transition: all 0.3s ease;
+        }
+        
+        .coffee-bean {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-mug-hot text-amber-800 text-3xl mr-2"></i>
+                        <span class="text-xl font-bold text-amber-900 font-serif">Karis Coffee Pub</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                      <li>  <a href="#home">Home</a></li>
+                       <li><a href="#about">About</a></li>
+                       <li><a href="#menu">Menu</a></li>
+                       <li><a href="#gallery">Gallery</a></li>
+                       <li><a href="#contact">Contact</a></li>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-amber-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+ 
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center text-white pt-20">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 font-serif">Karis Coffee Pub</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Where every cup tells a story. Artisanal coffee in a cozy, welcoming atmosphere.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#menu" class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">View Menu</a>
+                <a href="#contact" class="bg-transparent hover:bg-white hover:text-amber-900 text-white font-bold py-3 px-6 border-2 border-white rounded-full transition duration-300">Visit Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4 font-serif">Our Story</h2>
+                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 relative">
+                    <div class="absolute -bottom-6 -right-6 bg-amber-100 p-4 rounded-lg shadow-lg hidden md:block">
+                        <div class="flex items-center">
+                            <i class="fas fa-award text-amber-700 text-3xl mr-3"></i>
+                            <div>
+                                <p class="font-bold text-amber-900">Best Coffee Shop</p>
+                                <p class="text-sm text-gray-600">2025 Local Awards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">A Passion for Perfect Coffee</h3>
+                    <p class="text-gray-600 mb-4">Founded in 2025, Karis Coffee Pub began as a small dream to create a community space where people could enjoy exceptional coffee in a warm, inviting atmosphere.</p>
+                    <p class="text-gray-600 mb-6">We source our beans directly from ethical farms around the world and roast them in-house to bring out their unique flavors. Every cup is crafted with care by our skilled baristas.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-seedling text-amber-700 mr-3"></i>
+                            <span>Ethically Sourced Beans</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-heart text-amber-700 mr-3"></i>
+                            <span>Handcrafted with Love</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-leaf text-amber-700 mr-3"></i>
+                            <span>Organic Options</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-amber-700 mr-3"></i>
+                            <span>Community Focused</span>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                        Learn More About Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-amber-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4 font-serif">Our Menu</h2>
+                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">From classic espresso drinks to our signature creations, we have something for every coffee lover.</p>
+            </div>
+            
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button data-category="coffee" class="menu-tab active px-4 py-2 text-sm font-medium rounded-l-lg bg-amber-700 text-white">
+                        Coffee
+                    </button>
+                    <button data-category="tea" class="menu-tab px-4 py-2 text-sm font-medium bg-white text-amber-900">
+                        Tea
+                    </button>
+                    <button data-category="food" class="menu-tab px-4 py-2 text-sm font-medium rounded-r-lg bg-white text-amber-900">
+                        Food
+                    </button>
+                </div>
+            </div>
+            
+            <div id="coffee-menu" class="menu-category grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Coffee items will be loaded here -->
+            </div>
+            
+            <div id="tea-menu" class="menu-category hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tea items will be loaded here -->
+            </div>
+            
+            <div id="food-menu" class="menu-category hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Food items will be loaded here -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-amber-700 font-medium">
+                    Download Full Menu
+                    <i class="fas fa-download ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4 font-serif">Gallery</h2>
+                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Take a peek inside our cozy coffee pub and see what makes us special.</p>
+            </div>
+            
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-amber-700 font-medium">
+                    View More Photos
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-amber-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4 font-serif">What Our Customers Say</h2>
+                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <div class="flex text-amber-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The best latte I've ever had! The atmosphere is so cozy and the staff is incredibly friendly. My go-to spot for coffee and getting work done."</p>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <div class="flex text-amber-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Karis Coffee Pub has ruined all other coffee for me. Their single-origin pour overs are exceptional. I love that they rotate their beans seasonally."</p>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Emily Rodriguez</h4>
+                            <div class="flex text-amber-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The perfect place to meet friends or just enjoy some alone time. Their caramel macchiato is divine, and the avocado toast is always fresh and delicious."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4 font-serif">Visit Us</h2>
+                <div class="w-24 h-1 bg-amber-700 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">We'd love to see you! Come enjoy our coffee and warm atmosphere.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-amber-50 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-amber-900 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-amber-700 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Address</h4>
+                                    <p class="text-gray-600">Embu ,siakago next to datamax cyber</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-amber-700 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">+254 791438006</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-amber-700 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">Karisdeno74@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-amber-700 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 7am - 7pm</p>
+                                    <p class="text-gray-600">Saturday - Sunday: 8am - 6pm</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-amber-700 hover:bg-amber-800 text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-amber-700 hover:bg-amber-800 text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-amber-700 hover:bg-amber-800 text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-amber-50 p-8 rounded-lg shadow-lg h-full">
+                        <h3 class="text-2xl font-bold text-amber-900 mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-6 rounded-full transition duration-300 w-full md:w-auto">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 rounded-lg overflow-hidden shadow-xl">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215256018263!2d-73.98784492460506!3d40.75798597138946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1689876445934!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-amber-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4 font-serif">Join Our Coffee Club</h2>
+            <p class="text-amber-200 mb-8 max-w-2xl mx-auto">Sign up for our newsletter to receive exclusive offers, coffee tips, and updates about special events.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg focus:outline-none text-gray-900">
+                <button type="submit" class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-mug-hot text-amber-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold font-serif">Karis Coffee Pub</span>
+                    </div>
+                    <p class="text-gray-400">Crafting exceptional coffee experiences since 2024. Where every cup tells a story.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-500 transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-500 transition duration-300">About Us</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-amber-500 transition duration-300">Menu</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-amber-500 transition duration-300">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Information</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="bg-gray-700 hover:bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">Download our app:</p>
+                    <div class="flex space-x-2 mt-2">
+                        <a href="#" class="bg-black text-white px-3 py-1 rounded flex items-center text-sm">
+                            <i class="fab fa-apple mr-1"></i> App Store
+                        </a>
+                        <a href="#" class="bg-black text-white px-3 py-1 rounded flex items-center text-sm">
+                            <i class="fab fa-google-play mr-1"></i> Play Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Karis Coffee Pub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-amber-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+</body>

@@ -3,130 +3,665 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my phone</title>
+    <title>KARIS COFFEE PUB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background-color: coral;
         }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
         }
-        header ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1445112098124-3e76dd67983c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-        header li {
-            margin: 0 15px;
+        
+        .menu-item:hover .menu-overlay {
+            opacity: 1;
+            transform: translateY(0);
         }
-        header a {
-            color: white;
-            text-decoration: none;
+        
+        .menu-overlay {
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
         }
-        section {
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            background-color: white;
-            border-radius: 5px;
+        
+        .coffee-bean {
+            animation: float 3s ease-in-out infinite;
         }
-        h2 {
-            text-align: center;
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #333;
-            color: white;
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
         }
-
-
-
-
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
-<body>
-    <header>
-        <ul>
-            <li><a href="#hero" >Home</a> </li>
-            <li><a href="#features">Features</a> </li>
-            <li><a href="#testimonials">Testimonials</a> </li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">conduct us</a>
-        </ul>
-    </header>
-    <section id="hero">i
-        <div class="hero-content">
-            <h2>Samsung Galaxy A21</h2>
-        <p>Samsung Galaxy A21 is a smartphone that was launched in 2020. It features a 6.5-inch display, quad-camera setup, and a large battery.</p>
-        <p>See te whole screen on a big screen wit Galaxy A 21s wit 6.5 inch display.</p>
-        <p> Capture more with the awesome camera syeetem and long lasting power ,wit high quality battry life of 5000 Amh</p>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="twin.jpg" alt="KARIS COFFEE PUB Logo" class="h-12 w-12 rounded-full">
+                    <a href="#" class="ml-3 text-xl font-bold heading-font text-amber-900">KARIS COFFEE PUB</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-amber-900 hover:text-amber-700 transition">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-amber-700 transition">About</a>
+                    <a href="#menu" class="text-gray-600 hover:text-amber-700 transition">Menu</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-amber-700 transition">Gallery</a>
+                    <a href="#contact" class="text-gray-600 hover:text-amber-700 transition">Contact</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-amber-900">Home</a>
+                <a href="#about" class="block py-2 text-gray-600">About</a>
+                <a href="#menu" class="block py-2 text-gray-600">Menu</a>
+                <a href="#gallery" class="block py-2 text-gray-600">Gallery</a>
+                <a href="#contact" class="block py-2 text-gray-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="coffee-bean mb-6">
+                <i class="fas fa-coffee text-4xl text-amber-300"></i>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold heading-font mb-6">KARIS COFFEE PUB</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Where every cup tells a story. Experience artisanal coffee in the heart of the city.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#menu" class="bg-amber-700 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium transition">Our Menu</a>
+                <a href="#contact" class="bg-transparent hover:bg-white hover:text-amber-900 text-white border-2 border-white px-8 py-3 rounded-full font-medium transition">Visit Us</a>
+            </div>
         </div>
     </section>
-    <section id="features">
-        <h2>Features</h2>
-        <ul>
-            <li>6.5-inch display</li>
-            <li> <a href="quad-camera setup">Quad-camera setup</a></li>
-            <li>Large battery</li>
-            <li>Fast charging support</li>
-            <li>Fingerprint sensor</li>
-            <li>Expandable storage</li>
-            <li>Android 10</li>
-            <li>8gb ram</li>
-            <li>128gb storage</li>
-            <li>high quality screen</li>
 
-        </ul>
-        </section>
-    <section id="testimonials">
-        <h2>Testimonials</h2>
-        <p>"I like the design of the Samsung Galaxy A21. It's very common and have modern features on its update"</p>
-        </section>
-    <section id="pricing">
-        <h2>Pricing</h2>
-        <p>The A 21 phone is priced at  ksh 27,000.</p>
-        <button id="buy-now">Buy Now</button>
-        </section>
-    <section id="faq">
-        <h2>FAQ</h2>
-        <p>Q: Does the a 21 support 5G ?</p>
-        <p>A: No, the phone does not support 5G.</p>
-        <p>Q: What is the battery capacity of phone.?</p>
-        <p>A: The phone has a 5000mAh battery.</p>
-        <p>Q: Is the storage expandable?</p>
-        <p>A: Yes, the storage is expandable up to 512GB via microSD card.</p>
-        <p>Q: What is the camera resolution?</p>
-        <p>A: The phone has a quad-camera setup with a 48MP main camera.</p>
-        <p>Q: what is the screen size?</p>
-        <p>A: The phone has a 6.5-inch display.</p>
-        <p>Q: What is the operating system?</p>
-        <p>A: The phone runs on Android 10.</p>
-        <p>Q: What is the RAM size?</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-amber-900 mb-4">Our Story</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Coffee Shop Interior" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold heading-font text-gray-800 mb-4">Crafting Coffee Experiences Since 2024</h3>
+                    <p class="text-gray-600 mb-6">KARIS COFFEE PUB was born from a passion for exceptional coffee and a desire to create a space where people could connect over beautifully crafted beverages. Our founder, a third-generation coffee roaster, wanted to bring specialty coffee to the community in an approachable yet elevated way.</p>
+                    <p class="text-gray-600 mb-6">We source our beans directly from ethical farms around the world, roast them in small batches to highlight their unique characteristics, and prepare each drink with care and precision.</p>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="flex items-center">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-seedling text-amber-700"></i>
+                            </div>
+                            <span class="font-medium">Ethically Sourced</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-fire text-amber-700"></i>
+                            </div>
+                            <span class="font-medium">Small Batch Roasted</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-heart text-amber-700"></i>
+                            </div>
+                            <span class="font-medium">Handcrafted with Love</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-users text-amber-700"></i>
+                            </div>
+                            <span class="font-medium">Community Focused</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-amber-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-amber-900 mb-4">Our Menu</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">From classic espresso drinks to our signature creations, each item is crafted with care using premium ingredients.</p>
+            </div>
+            
+            <div class="flex justify-center mb-10">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button onclick="filterMenu('all')" class="px-6 py-2 text-sm font-medium rounded-l-lg bg-amber-700 text-white">All</button>
+                    <button onclick="filterMenu('coffee')" class="px-6 py-2 text-sm font-medium bg-white text-amber-700 hover:bg-amber-100">Coffee</button>
+                    <button onclick="filterMenu('tea')" class="px-6 py-2 text-sm font-medium bg-white text-amber-700 hover:bg-amber-100">Tea</button>
+                    <button onclick="filterMenu('food')" class="px-6 py-2 text-sm font-medium rounded-r-lg bg-white text-amber-700 hover:bg-amber-100">Food</button>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-items">
+                <!-- Menu items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
 
-        </section>
-    <section id="contact">
-        <h2>conduct</h2>
-        <p>0791438006</p>
-        <p>0783645263</p>
-        <p>karisdeno@outlook.com</p>
-        </section>
-    <footer>
-        <p>&copy; 2025 Samsung. All rights reserved.</p>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-amber-900 mb-4">Gallery</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">A glimpse into the KARIS COFFEE PUB experience</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <video width="100%" height="100%" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105" controls>
+                    <source src="coffee.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video>
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.unsplash.com/photo-1517701550928-30a09b2ef16f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Coffee Shop Interior" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.unsplash.com/photo-1517701550928-30a09b2ef16f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Latte Art" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.unsplash.com/photo-1517701550928-30a09b2ef16f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Coffee Beans" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.unsplash.com/photo-1517701550928-30a09b2ef16f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pastries" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.unsplash.com/photo-1517701550928-30a09b2ef16f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Customers Enjoying Coffee" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-amber-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-amber-900 mb-4">What Our Customers Say</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The best coffee in town! The atmosphere is perfect for getting work done or catching up with friends. Their seasonal specials are always creative and delicious."</p>
+                    <div class="flex items-center">
+                        <img src="kims.jpg" alt="LYNNET ." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">LYNNET .</h4>
+                            <p class="text-gray-500 text-sm">Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"As a coffee enthusiast, I'm always searching for places that take their craft seriously. KARIS exceeds expectations with their attention to detail and quality."</p>
+                    <div class="flex items-center">
+                        <img src="DENNO.jpg" alt="DENNIS K." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">DENNIS K.</h4>
+                            <p class="text-gray-500 text-sm">Coffee Blogger</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"I come here for the coffee but stay for the amazing avocado toast. The staff remembers my name and order, which makes me feel right at home."</p>
+                    <div class="flex items-center">
+                        <img src="SUZIE .jpg" alt="Suzzie." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Suzzie.</h4>
+                            <p class="text-gray-500 text-sm">Local Artist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-amber-900 mb-4">Visit Us</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">We'd love to see you at our coffee pub. Come experience the KARIS difference.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2">
+                    <div class="bg-amber-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold heading-font text-amber-900 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-amber-700"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Location</h4>
+                                    <p class="text-gray-600"> Coffee Lane,  Manyatta District<br>EMBU city</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-amber-700"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Hours</h4>
+                                    <p class="text-gray-600">
+                                        Monday - Friday: 7:00 AM - 8:00 PM<br>
+                                        Saturday - Sunday: 8:00 AM - 9:00 PM
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-amber-700"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">+254 791438006</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-amber-700"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">HotCoffee@kariscoffeepub.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-amber-100 hover:bg-amber-200 text-amber-700 p-3 rounded-full transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-amber-100 hover:bg-amber-200 text-amber-700 p-3 rounded-full transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-amber-100 hover:bg-amber-200 text-amber-700 p-3 rounded-full transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-amber-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold heading-font text-amber-900 mb-6">Send Us a Message</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-amber-700 hover:bg-amber-600 text-white px-6 py-3 rounded-lg font-medium transition w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-amber-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold heading-font mb-4">Join Our Coffee Club</h2>
+            <p class="max-w-2xl mx-auto mb-8">Subscribe to our newsletter for exclusive offers, new menu items, and coffee tips straight to your inbox.</p>
+            
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-900">
+                <button type="submit" class="bg-amber-700 hover:bg-amber-600 px-6 py-3 rounded-r-lg font-medium transition">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold heading-font mb-4">KARIS COFFEE PUB</h3>
+                    <p class="text-gray-400">Where every cup tells a story. Experience artisanal coffee in the heart of the city.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white transition">Menu</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span> Embu Coffee Lane, EMBU TOWN </span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            <span>+254 791438006</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>hello@kariscoffeepub.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Opening Hours</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Monday - Friday: 7:00 AM - 8:00 PM</li>
+                        <li>Saturday - Sunday: 8:00 AM - 9:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 KARIS COFFEE PUB. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
-    <p id="back-to-top"><a href="#top">Back to Top</a></p>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-amber-700 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
 
-    
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Menu Items Data
+        const menuItems = [
+            {
+                id: 1,
+                name: "Espresso",
+                description: "A concentrated form of coffee served in small, strong shots.",
+                price: "Ksh 230.50",
+                category: "coffee",
+                icon: "fa-mug-hot"
+            },
+            {
+                id: 2,
+                name: "Cappuccino",
+                description: "Espresso with steamed milk and a silky layer of foam.",
+                price: "Ksh 200.50",
+                category: "coffee",
+                icon: "fa-mug-hot"
+            },
+            {
+                id: 3,
+                name: "Latte",
+                description: "Espresso with a lot of steamed milk and a light layer of foam.",
+                price: "Ksh50.75",
+                category: "coffee",
+                icon: "fa-mug-hot"
+            },
+            {
+                id: 4,
+                name: "Cold Brew",
+                description: "Smooth, cold-extracted coffee served over ice.",
+                price: "Ksh 150.50",
+                category: "coffee",
+                icon: "fa-mug-hot"
+            },
+            {
+                id: 5,
+                name: "Karis Special",
+                description: "Our signature drink with espresso, caramel, and a hint of cinnamon.",
+                price: "Ksh 130.25",
+                category: "coffee",
+                icon: "fa-mug-hot"
+            },
+            {
+                id: 6,
+                name: "Chai Latte",
+                description: "Spiced tea concentrate with steamed milk.",
+                price: "Ksh334.25",
+                category: "tea",
+                icon: "fa-mug-saucer"
+            },
+            {
+                id: 7,
+                name: "Matcha Latte",
+                description: "Premium green tea powder whisked with steamed milk.",
+                price: "Ksh 100.00",
+                category: "tea",
+                icon: "fa-mug-saucer"
+            },
+            {
+                id: 8,
+                name: "Herbal Tea",
+                description: "Selection of organic herbal teas.",
+                price: "Ksh233.50",
+                category: "tea",
+                icon: "fa-mug-saucer"
+            },
+            {
+                id: 9,
+                name: "Avocado Toast",
+                description: "Sourdough bread with smashed avocado, cherry tomatoes, and feta.",
+                price: "Ksh128.50",
+                category: "food",
+                icon: "fa-utensils"
+            },
+            {
+                id: 10,
+                name: "Breakfast Sandwich",
+                description: "Egg, cheddar, and your choice of bacon or sausage on a croissant.",
+                price: "Ksh100.50",
+                category: "food",
+                icon: "fa-utensils"
+            },
+            {
+                id: 11,
+                name: "Yogurt Parfait",
+                description: "Greek yogurt with granola, honey, and seasonal fruits.",
+                price: "Ksh 240.50",
+                category: "food",
+                icon: "fa-utensils"
+            },
+            {
+                id: 12,
+                name: "Croissant",
+                description: "Freshly baked butter croissant.",
+                price: "Ksh200.75",
+                category: "food",
+                icon: "fa-utensils"
+            }
+        ];
+
+        // Display Menu Items
+        const menuContainer = document.getElementById('menu-items');
+        
+        function displayMenuItems(items) {
+            menuContainer.innerHTML = '';
+            
+            items.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.className = 'bg-white rounded-lg shadow-md overflow-hidden relative group';
+                menuItem.innerHTML = `
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="bg-amber-100 p-3 rounded-full">
+                                <i class="fas ${item.icon} text-amber-700"></i>
+                            </div>
+                            <span class="bg-amber-700 text-white text-sm font-medium px-3 py-1 rounded-full">${item.price}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">${item.name}</h3>
+                        <p class="text-gray-600">${item.description}</p>
+                    </div>
+                    <div class="menu-overlay absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center p-6">
+                        <div class="text-center text-white">
+                            <h3 class="text-xl font-bold mb-2">${item.name}</h3>
+                            <p class="mb-4">${item.description}</p>
+                            <span class="text-amber-300 font-bold text-lg">${item.price}</span>
+                        </div>
+                    </div>
+                `;
+                
+                menuContainer.appendChild(menuItem);
+            });
+        }
+
+        // Filter Menu Items
+        function filterMenu(category) {
+            if (category === 'all') {
+                displayMenuItems(menuItems);
+            } else {
+                const filteredItems = menuItems.filter(item => item.category === category);
+                displayMenuItems(filteredItems);
+            }
+        }
+
+        // Initialize with all menu items
+        displayMenuItems(menuItems);
+
+        // Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
